@@ -60,7 +60,7 @@ startBtnRef.addEventListener("click", () => {
 
             if ((Date.parse(date.value) - Date.parse(new Date())) <= 0) {
                 // window.alert("Timer completed !")
-                startBtnRef.disabled = false;
+
                 clearInterval(timeinterval);
             }
         }
@@ -72,6 +72,7 @@ startBtnRef.addEventListener("click", () => {
     }
 
     initializeClock();
+
 
 });
 
