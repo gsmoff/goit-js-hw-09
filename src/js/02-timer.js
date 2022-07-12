@@ -1,6 +1,6 @@
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
-
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 const options = {
     enableTime: true,
     time_24hr: true,
@@ -19,7 +19,10 @@ textInput.addEventListener("input", (event) => {
     const start = event.currentTarget.value;
     if (Date.parse(start) > Date.parse(new Date())) {
         startBtnRef.disabled = false;
-    } else {window.alert("Please choose a date in the future") }
+    } else {
+        // window.alert("Please choose a date in the future")x
+        Notify.failure('Please choose a date in the future');
+}
 });
 startBtnRef.addEventListener("click", () => {
     startBtnRef.disabled = true;
@@ -59,6 +62,7 @@ startBtnRef.addEventListener("click", () => {
 
             if ((Date.parse(date.value) - Date.parse(new Date())) <= 0) {
                 clearInterval(timeinterval);
+                Notify.success('Time is over!');
             }
         }
         function addLeadinfZero(value) {
