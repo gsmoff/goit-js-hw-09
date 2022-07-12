@@ -19,7 +19,7 @@ textInput.addEventListener("input", (event) => {
     const start = event.currentTarget.value;
     if (Date.parse(start) > Date.parse(new Date())) {
         startBtnRef.disabled = false;
-    } else { window.alert("Please choose a date in the future") }
+    } else {window.alert("Please choose a date in the future") }
 });
 startBtnRef.addEventListener("click", () => {
     startBtnRef.disabled = true;
@@ -52,15 +52,12 @@ startBtnRef.addEventListener("click", () => {
             const time = convertMs(Date.parse(date.value) - Date.parse(new Date()));
             console.log(time);
 
-
             daysSpan.innerHTML = addLeadinfZero(time.days);
             hoursSpan.innerHTML = addLeadinfZero(time.hours);
             minutesSpan.innerHTML = addLeadinfZero(time.minutes);
             secondsSpan.innerHTML = addLeadinfZero(time.seconds);
 
             if ((Date.parse(date.value) - Date.parse(new Date())) <= 0) {
-                // window.alert("Timer completed !")
-
                 clearInterval(timeinterval);
             }
         }
