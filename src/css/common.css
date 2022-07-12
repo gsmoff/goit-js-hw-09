@@ -10,9 +10,43 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
+
 
 img {
   display: block;
   max-width: 100%;
+}
+
+.timer {
+  font-family: sans-serif;
+  margin-bottom: 15px;
+  color: #212121;
+  display: inline-block;
+  font-weight: 100;
+  text-align: center;
+  font-size: 30px;
+}
+
+.field {
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #212121;
+  display: inline-block;
+}
+
+.value {
+  padding: 15px;
+  border-radius: 3px;
+  border: 1px solid #212121;
+  display: inline-block;
+}
+
+.label {
+  padding-top: 5px;
+  font-size: 16px;
+  display: block;
 }
