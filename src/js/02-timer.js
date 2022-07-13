@@ -20,7 +20,6 @@ textInput.addEventListener("input", (event) => {
     if (Date.parse(start) > Date.parse(new Date())) {
         startBtnRef.disabled = false;
     } else {
-        // window.alert("Please choose a date in the future")x
         Notify.failure('Please choose a date in the future');
 }
 });
