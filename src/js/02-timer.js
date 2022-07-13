@@ -7,7 +7,7 @@ const options = {
     defaultDate: new Date(),
     minuteIncrement: 1,
     onClose(selectedDates) {
-        console.log(selectedDates[0]);
+    console.log(selectedDates[0]);
     },
 };
 flatpickr("#datetime-picker", options);
@@ -27,9 +27,6 @@ startBtnRef.addEventListener("click", () => {
     startBtnRef.disabled = true;
     const date = document.querySelector('#datetime-picker');
     console.log("Button was clicked");
-    const fullTime = Date.parse(date.value) - Date.parse(new Date());
-    console.log(fullTime);
-
     function convertMs(ms) {
         const second = 1000;
         const minute = second * 60;
@@ -70,10 +67,7 @@ startBtnRef.addEventListener("click", () => {
         updateClock();
         const timeinterval = setInterval(updateClock, 1000);
     }
-
     initializeClock();
-
-
 });
 
 
